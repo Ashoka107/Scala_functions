@@ -1,0 +1,41 @@
+
+
+package com.bitwise.RationalTest
+
+import com.bitwise.Rational.Rational
+
+class RationalTest{
+  @Test
+  def itShouldGiveRationalValue():Unit ={
+  //given
+  //when
+val rational=new Rational(2,4)
+  //then
+Assert.assertEquals(rational.numerator/rational.denominator,1/2)
+}
+ @Test(expected = classOf[IllegalArgumentException])
+  def denomShouldNotBeZero: Unit ={
+    //given
+    //when
+    val rational=new Rational(2,0)
+    //then
+
+  }
+  //@Test
+  def itShouldAcceptSingleNum: Unit ={
+    //given
+
+    //when
+    //then
+  }
+  @Test
+  def itShouldAddRationalNums: Unit ={
+    //given
+    val num1=new Rational(2,4)
+    val num2=new Rational(3,6)
+    //when
+    val sum=num1 add(num2)
+    //then
+    Assert.assertEquals(sum,1)
+  }
+}

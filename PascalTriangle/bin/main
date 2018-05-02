@@ -1,0 +1,8 @@
+
+
+object PascalTriangle {
+def main(args : Array[String]){
+ 
+ 
+}
+}

@@ -1,0 +1,32 @@
+Steps : 
+
+1. cp /data/etl/prod/datafiles/processed/20161013165432.EUADHDAILY.ZIP /data/etl/dev/processed/EUADH_Oct
+2. unzip -j 20161013165432.EUADHDAILY.ZIP *MASTER
+3. mv MASTER 2016-10-13_DLY_MASTER_UKD_20161013165432
+4. mv LAST_ACTIVE_MASTER 2016-10-13_DLY_LAST_ACTIVE_MASTER_UKD_20161013165432
+5. cp 2016-10-13_DLY_MASTER_UKD_20161013165432 /data/etl/dev/unprocessed
+6. cp 2016-10-13_DLY_LAST_ACTIVE_MASTER_UKD_20161013165432 /data/etl/dev/unprocessed
+7. sh /data/etl/dev/scripts/EUADH_adhoc_src_load.sh 'UKD_MASTER' '2016-10-13_DLY_MASTER_UKD*' 'DEV' 0 'D'
+8. sh /data/etl/dev/scripts/EUADH_adhoc_src_load.sh 'UKD_LAST_ACTIVE_MASTER' '2016-10-13_DLY_LAST_ACTIVE_MASTER_UKD*' 'DEV' 0 'D'
+
+Validation :
+
+select t1.merchant,t1.date_last_activity,t1.first_deposit_date,t1.merchant_status,t1.activity_status,t2.date_last_activity,t2.first_deposit_date,t2.last_merchant_status,t2.last_activity_status from 
+cmi_dev.ukd_master  t1 inner join cmi_dev.ukd_last_active_master  t2 on t1.merchant =t2.merchant where t1.merchant='0000000027457501';
+
+0000000025607121
+0000000026696611
+0000000026813101
+0000000027108041
+0000000027289131
+0000000027414941
+0000000027427811
+0000000027452481
+0000000027455031
+0000000027457501
+
+Loading into Prod :
+
+insert overwrite table cmi.ukd_master_update_fdd select * from cmi_dev.ukd_master;
+
+Repeat validations for prod table

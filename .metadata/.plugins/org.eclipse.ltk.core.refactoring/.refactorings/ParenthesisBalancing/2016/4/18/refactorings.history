@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;ParenthesisBalancing.scala&apos; to &apos;ParenthesisBalancing/src/com.bitwise.ParenthesisBalancing&apos;&#x0D;&#x0A;- Original project: &apos;ParenthesisBalancing&apos;&#x0D;&#x0A;- Destination element: &apos;ParenthesisBalancing/src/com.bitwise.ParenthesisBalancing&apos;&#x0D;&#x0A;- Original element: &apos;ParenthesisBalancing.scala&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" destination="/src&lt;com.bitwise.ParenthesisBalancing" element1="src/ParenthesisBalancing.scala" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1461668882945" units="0" version="1.0"/>
+</session>

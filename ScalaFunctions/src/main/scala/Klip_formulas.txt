@@ -1,0 +1,24 @@
+
+
+---Data Between two dates--- SUM(SELECT(ce6c5d65e57c7da48ad99e02ffd5b727@E:E;,BETWEEN(DATE(ce6c5d65e57c7da48ad99e02ffd5b727@C:C;,"yyyymmdd"),
+DATE_STARTOF(TODAY( ),"3",-10),DATE_ENDOF(TODAY(),"3",-10))))
+
+---Data Between startdate & enddate variables---GROUP(DATE_CONVERT(SELECT(SLICE(58320ce8514902132018bf2aa67344c1@C:C;),BETWEEN(DATE(SLICE(58320ce8514902132018bf2aa67344c1@C:C;),"yyyyMMdd"),$st_date,$end_date)),"yyyyMMdd","MM"))
+
+ 
+---GROUP(DATE_CONVERT(SLICE(ce6c5d65e57c7da48ad99e02ffd5b727@C:C;),"yyyyMMdd","MM"))
+ 
+---Sum feild for particular mnth--GROUPBY(SELECT(DATE_CONVERT(SLICE(58320ce8514902132018bf2aa67344c1@C:C;),"yyyyMMdd","yyyyMM"),(DATE_CONVERT(SLICE(58320ce8514902132018bf2aa67344c1@C:C;),"yyyyMMdd","yyyyMM")="201601")),SLICE(58320ce8514902132018bf2aa67344c1@E:E;))
+
+---Concatenating yr & mth to form date---SELECT(SLICE(eccdfe6ad2f9a57ccf41284a20d4e4eb@S:S;),DATE_IN(DATE(CONCAT(SLICE(9baed151fa01d0da8f9f38e51994047e@B:B;),SLICE(eccdfe6ad2f9a57ccf41284a20d4e4eb@D:D;)),"yyyyMMMM"),"3",-15))
+
+---Increase or decrease % by prev.--((GROUPBY(SELECT(DATE_CONVERT(SLICE(58320ce8514902132018bf2aa67344c1@C:C;),"yyyyMMdd","MM"),(DATE_CONVERT(SLICE(58320ce8514902132018bf2aa67344c1@C:C;),"yyyyMMdd","yyyyMM")="201603")),SLICE(58320ce8514902132018bf2aa67344c1@E:E;)))-(GROUPBY(SELECT(DATE_CONVERT(SLICE(58320ce8514902132018bf2aa67344c1@C:C;),"yyyyMMdd","MM"),(DATE_CONVERT(SLICE(58320ce8514902132018bf2aa67344c1@C:C;),"yyyyMMdd","yyyyMM")="201602")),SLICE(58320ce8514902132018bf2aa67344c1@E:E;))))/(GROUPBY(SELECT(DATE_CONVERT(SLICE(58320ce8514902132018bf2aa67344c1@C:C;),"yyyyMMdd","MM"),(DATE_CONVERT(SLICE(58320ce8514902132018bf2aa67344c1@C:C;),"yyyyMMdd","yyyyMM")="201602")),SLICE(58320ce8514902132018bf2aa67344c1@E:E;)))
+
+
+
+Tuesday, December 13, 2016
+
+Poonam K Patil	https://vpn-atl.globalpay.com/
+	5:21 PM
+	
+	at \\gl1pf-001\AppDev-Kubik\Prod Support\Hadoop\Hadoop File Status.xlsx

@@ -1,0 +1,19 @@
+
+
+trait Animal {
+  def speak:String
+}
+class Dog extends Animal{
+  override def speak:String="bhonw"
+}
+class Cat extends Animal{
+  override def speak:String="meonw"
+}
+object Animal extends App{
+  def apply(animal:String)=animal match{
+    case "Dog"=>new Dog().speak
+    case "Cat"=>new Cat().speak
+  }
+  val dog=Animal("Dog")
+  val cat=Animal("Cat")
+}
